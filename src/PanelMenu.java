@@ -34,8 +34,8 @@ public class PanelMenu extends javax.swing.JPanel {
 
         imc = new javax.swing.JButton();
         temperatura = new javax.swing.JButton();
-        contactos = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        temperatura2 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 255, 255));
 
@@ -48,23 +48,23 @@ public class PanelMenu extends javax.swing.JPanel {
         });
 
         temperatura.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
-        temperatura.setText("Convertidor de Temperatura");
+        temperatura.setText("Celsius --> Fahrenheit");
         temperatura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 temperaturaActionPerformed(evt);
             }
         });
 
-        contactos.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
-        contactos.setText("Registro de Contactos");
-        contactos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contactosActionPerformed(evt);
-            }
-        });
-
         jLabel1.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
         jLabel1.setText("Presiona el boton para ingresar al ejercicio");
+
+        temperatura2.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
+        temperatura2.setText("Fahrenheit --> Celsius");
+        temperatura2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                temperatura2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -73,10 +73,10 @@ public class PanelMenu extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(205, 205, 205)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(contactos, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(imc, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(imc, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(temperatura2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(200, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -84,13 +84,13 @@ public class PanelMenu extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jLabel1)
-                .addGap(42, 42, 42)
+                .addGap(18, 18, 18)
                 .addComponent(imc, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(contactos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addGap(17, 17, 17)
+                .addComponent(temperatura2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(121, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -102,15 +102,14 @@ public class PanelMenu extends javax.swing.JPanel {
     cardLayout.show(panelContenedor, "temperatura");
     }//GEN-LAST:event_temperaturaActionPerformed
 
-    private void contactosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactosActionPerformed
-    cardLayout.show(panelContenedor, "contactos");
-    }//GEN-LAST:event_contactosActionPerformed
-
+    private void temperatura2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_temperatura2ActionPerformed
+    cardLayout.show(panelContenedor,"temperatura2");
+    }//GEN-LAST:event_temperatura2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton contactos;
     private javax.swing.JButton imc;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton temperatura;
+    private javax.swing.JButton temperatura2;
     // End of variables declaration//GEN-END:variables
 }

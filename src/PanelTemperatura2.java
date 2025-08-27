@@ -1,5 +1,6 @@
 
 import java.awt.CardLayout;
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -11,19 +12,17 @@ import javax.swing.JPanel;
  *
  * @author Dairo Montiel
  */
-public class PanelTemperatura extends javax.swing.JPanel {
+public class PanelTemperatura2 extends javax.swing.JPanel {
 
     private JPanel panelContenedor;
     private CardLayout cardLayout;
 
-    public PanelTemperatura(JPanel panelContenedor, CardLayout cardLayout) {
+    public PanelTemperatura2(JPanel panelContenedor, CardLayout cardLayout) {
         initComponents();
 
         this.panelContenedor = panelContenedor;
         this.cardLayout = cardLayout;
-
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,9 +34,9 @@ public class PanelTemperatura extends javax.swing.JPanel {
     private void initComponents() {
 
         atras = new javax.swing.JButton();
-        calcular = new javax.swing.JButton();
-        temperatura = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        temperatura = new javax.swing.JTextField();
+        calcular = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(204, 255, 255));
@@ -50,6 +49,11 @@ public class PanelTemperatura extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
+        jLabel1.setText("Ingrese la temperatura");
+
+        temperatura.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
+
         calcular.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
         calcular.setText("CALCULAR");
         calcular.addActionListener(new java.awt.event.ActionListener() {
@@ -58,72 +62,67 @@ public class PanelTemperatura extends javax.swing.JPanel {
             }
         });
 
-        temperatura.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
-        temperatura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                temperaturaActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
-        jLabel1.setText("Ingrese la temperatura");
-
         jLabel2.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
-        jLabel2.setText("Convertidor de temperatura (Celsius --> Fahrenheit)");
+        jLabel2.setText("Convertidor de temperatura ( Fahrenheit --> Celsius)");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(116, 116, 116)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(atras)
-                            .addGap(219, 219, 219)
-                            .addComponent(calcular))))
-                .addContainerGap(161, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(atras)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(calcular)))))
+                .addGap(153, 153, 153))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+                .addGap(51, 51, 51)
                 .addComponent(jLabel2)
-                .addGap(18, 18, 18)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(77, 77, 77)
+                    .addComponent(jLabel1)
+                    .addComponent(temperatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(atras)
-                    .addComponent(calcular))
+                    .addComponent(calcular)
+                    .addComponent(atras))
                 .addGap(89, 89, 89))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void atrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atrasActionPerformed
-    cardLayout.show(panelContenedor, "menu");
+        cardLayout.show(panelContenedor, "menu");
     }//GEN-LAST:event_atrasActionPerformed
 
     private void calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcularActionPerformed
-
-        /*Variables auxiliares*/
-        double c, f;
+        /* Variables auxiliares */
+        double f, c;
         try {
-            c = Double.parseDouble(temperatura.getText());
+            f = Double.parseDouble(temperatura.getText());
 
-            // Fórmula de Celsius a Fahrenheit:
-            // F = (C * 9/5) + 32
-            f = (c * 9 / 5) + 32;
-
+            // Fórmula de Fahrenheit a Celsius:
+            // C = (F - 32) * 5/9
+            c = (f - 32) * 5.0 / 9.0;
+            
+            //Mostrar el resultado con 3 digitos decimales .
+            DecimalFormat df = new DecimalFormat("#.###"); 
             JOptionPane.showMessageDialog(this,
-                    "La conversion de " + c + "° a Fahrenheit es " + f + "°F",
+                    "La conversión de " + f + "°F a Celsius es " + df.format(c) + "°C",
                     "Resultado",
                     JOptionPane.INFORMATION_MESSAGE
             );
@@ -135,13 +134,9 @@ public class PanelTemperatura extends javax.swing.JPanel {
                     "Error de entrada",
                     JOptionPane.WARNING_MESSAGE
             );
-
         }
-    }//GEN-LAST:event_calcularActionPerformed
 
-    private void temperaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_temperaturaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_temperaturaActionPerformed
+    }//GEN-LAST:event_calcularActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

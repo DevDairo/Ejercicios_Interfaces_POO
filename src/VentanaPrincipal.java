@@ -18,7 +18,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private PanelMenu panelMenu;
     private PanelIMC panelIMC;
     private PanelTemperatura panelTemperatura;
-    private PanelContactos panelContactos;
+    private PanelTemperatura2 panelTemperatura2;
     
     public VentanaPrincipal() {
         initComponents();
@@ -37,13 +37,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     panelMenu = new PanelMenu(panelContenedor, cardLayout);
     panelIMC = new  PanelIMC(panelContenedor, cardLayout);
     panelTemperatura = new PanelTemperatura(panelContenedor, cardLayout);
-    panelContactos = new  PanelContactos(panelContenedor, cardLayout);
-       
+    panelTemperatura2 = new  PanelTemperatura2(panelContenedor, cardLayout);
+    
     /*Añadir las cartas al contenedor principal */
     panelContenedor.add(panelMenu, "menu"); // "menu" es el identificador
     panelContenedor.add(panelIMC, "imc");   // "imc" es el identificador
     panelContenedor.add(panelTemperatura, "temperatura");
-    panelContenedor.add(panelContactos, "contactos");
+    panelContenedor.add(panelTemperatura2, "temperatura2");
+
+    
     
     //Configurar la ventana.
     this.setLocationRelativeTo(null); // Centra la ventana.
@@ -52,6 +54,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     cardLayout.show(panelContenedor, "menu");      
     
     }
+    
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
